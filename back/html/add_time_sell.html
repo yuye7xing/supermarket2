@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="js/laydate.js"></script>
+  <style type="text/css">
+		body{
+			font:14px/28px "微软雅黑";
+		}
+		.contact *:focus{outline :none;}
+		.contact{
+			width: 700px;
+			height: auto;
+			background: #f6f6f6;
+			margin: 40px auto;
+			padding: 10px;
+		}
+		.contact ul {
+			width: 650px;
+			margin: 0 auto;
+		}
+		.contact ul li{
+			border-bottom: 1px solid #dfdfdf;
+			list-style: none;
+			padding: 12px;
+		}
+		.contact ul li label {
+			width: 120px;
+			display: inline-block;
+			float: left;
+		}
+		.contact ul li input[type=text],.contact ul li input[type=password]{
+			width: 220px;
+			height: 25px;
+			border :1px solid #aaa;
+			padding: 3px 8px;
+			border-radius: 5px;
+		}
+		.contact ul li input:focus{
+			border-color: #c00;
+			
+		}
+		.contact ul li input[type=text]{
+			transition: padding .25s;
+			-o-transition: padding  .25s;
+			-moz-transition: padding  .25s;
+			-webkit-transition: padding  .25s;
+		}
+		.contact ul li input[type=password]{
+			transition: padding  .25s;
+			-o-transition: padding  .25s;
+			-moz-transition: padding  .25s;
+			-webkit-transition: padding  .25s;
+		}
+		.contact ul li input:focus{
+			padding-right: 70px;
+		}
+		.btn{
+			position: relative;
+			left: 300px;
+		}
+		.tips{
+			color: rgba(0, 0, 0, 0.5);
+			padding-left: 10px;
+		}
+		.tips_true,.tips_false{
+			padding-left: 10px;
+		}
+		.tips_true{
+			color: green;
+		}
+		.tips_false{
+			color: red;
+		}
+  </style>
+
+
+</head>
+<body>
+	<div class="contact" >
+		<form name="form1" method="post" action="add_time_sell.php" enctype="multipart/form-data">
+			<ul>
+				<li>
+					<label>商品名称：</label>
+					<input type="text" name="conmdity_name" placeholder="输入商品名称"  onblur="checkna()" value="<?php echo $conmdity_name;?>"/>
+		           <input type="submit" name="Submit" value="自动补全">
+				
+				</li>
+				<li>
+					<label>商品商家：</label>
+					<input type="text" name="producer_name" placeholder="输入厂商名称"  value="<?php echo $producer_name;?>"/><span class="tips" id="divpassword1">商家全名</span>
+				</li>
+				
+				<li>
+					<label>厂家地址：</label>
+					<input type="text" name="producer_add" placeholder="输入厂家地址" value="<?php echo $producer_add;?>" /><span class="tips" id="divpassword2">厂家具体地址</span>
+				</li>
+				<li>
+					<label>商品价格：</label>
+					<input type="text" name="money" placeholder="输入商品单价"  value="<?php echo $money;?>"/><span class="tips" id="divpassword2">这里是原价</span>
+				</li>
+				<li>
+					<label>改变后价格：</label>
+					<input type="text" name="end_money" placeholder="输入商品单价"  value="<?php echo $end_money;?>"/><span class="tips" id="divpassword2">输入改变后价格</span>
+				</li>
+					<li>
+					<label>更改日期：</label>
+						<input class="laydate-icon" id="demo" name="date" value="2015-6-25"> 
+				</li>
+				</li>
+					<li>
+					<label>结束日期：</label>
+						<input class="laydate-icon" id="demo" name="end_date" value="2015-7-25"> 
+				</li>
+				
+				<li>
+					<label>商品类型：</label>
+					<input type="text" name="type" placeholder="商品类型" " value="<?php echo $type;?>"/><span class="tips" id="divpassword2">两次密码需要相同</span>
+				</li>
+			
+			</ul>
+			<b class="btn"><input type="submit" name="Submit" value="提交">
+			<input type="reset" value="取消"/></b>
+		</form>
+	</div>
+	
+	 <script type="text/javascript">
+!function(){
+	laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+	laydate({elem: '#demo'});//绑定元素
+}();
+</script>
+</body>
+</html>

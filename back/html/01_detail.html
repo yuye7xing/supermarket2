@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title></title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+function edit(element){
+
+　var oldhtml = element.innerHTML;//获得元素之前的内容
+　var newobj = document.createElement('input');//创建一个input元素
+　newobj.type = 'text';//为newobj元素添加类型
+  newobj.value=oldhtml;
+　element.innerHTML = '';　　 //设置元素内容为空
+　element.appendChild(newobj);//添加子元素
+　newobj.focus();//获得焦点
+  //设置newobj失去焦点的事件
+　newobj.onblur = function(){
+
+      element.innerHTML = this.value ? this.value : oldhtml;
+   }
+}
+</script>
+</head>
+<body>
+<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="3">
+
+
+  <tr>
+    <td height="100%" valign="top">
+    <div style="overflow:auto;height:100%; width:100%">
+      <table width="100%" border="0" cellpadding="3" cellspacing="1" class="table1">
+        <TR>
+          <th width="15%" align="center"><strong>企业名称</strong></th>
+          <TD colspan="3" class="BGCgray" ondblclick="edit(this)"><?php echo $r[1];?></TD>
+          </TR>
+        <TR>
+          <th align="center"><strong>通讯地址</strong></th>
+          <TD width="35%" class="BGCgray"><?php echo $r[4];?></TD>
+          <th width="15%" class="BGCgray"><strong>营业执照</strong></th>
+          <TD width="35%" class="BGCgray"><?php echo $r[9];?></TD>
+          </TR>
+        <TR>
+          <th align="center"><strong>经营地址</strong></th>
+          <TD class="BGCgray"><?php echo $r[4];?></TD>
+          <th class="BGCgray"><strong>场地面积</strong></th>
+          <TD class="BGCgray">1000平米</TD>
+          </TR>
+        <TR>
+          <th align="center"><strong>所属行业</strong></th>
+          <TD colspan="3" class="BGCgray"><?php echo $r[10];?></TD>
+          </TR>
+        <TR>
+          <th align="center"><strong>注册资本</strong></th>
+          <TD class="BGCgray"><?php echo $r[12];?>万元</TD>
+          <th class="BGCgray"><strong>主营业务</strong></th>
+          <TD class="BGCgray"><?php echo $r[4];?></TD>
+        </TR>
+        <TR>
+          <th align="center"><strong>企业负责人</strong></th>
+          <TD class="BGCgray"><?php echo $r[2];?></TD>
+          <th class="BGCgray"><strong>联系电话</strong></th>
+          <TD class="BGCgray"><?php echo $r[3];?></TD>
+        </TR>
+        <TR>
+          <th align="center"><strong>联系人</strong></th>
+          <TD class="BGCgray"><?php echo $r[7];?></TD>
+          <th class="BGCgray"><strong>手机号码</strong></th>
+          <TD class="BGCgray"><?php echo $r[8];?></TD>
+        </TR>
+        <TR>
+          <th align="center"><strong>联系传真</strong></th>
+          <TD class="BGCgray"><?php echo $r[4];?></TD>
+          <th class="BGCgray"><strong>电子邮件</strong></th>
+          <TD class="BGCgray"><?php echo $r[9];?></TD>
+        </TR>
+        <TR>
+          <th align="center"><strong>经营范围</strong></th>
+          <TD colspan="3" class="BGCgray"><?php echo $r[10];?></TD>
+          </TR>
+        <TR>
+          
+          </TR>
+      </table>
+      <div style="width:100%; text-align:center; padding:5px">
+        <BUTTON style="HEIGHT:25px" onClick="javascript:if (confirm('返回上一页？')) location.href='01_list.html';else return;"><img src="../../images/btn_back.gif" width="16" height="16" align="absmiddle"> 返回</BUTTON>
+      </div>
+    </div></td>
+  </tr>
+</table>
+</body>
+</html>
